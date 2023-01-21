@@ -5,6 +5,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
 import Discover  from './components/Discover'
+import Around  from './components/Around'
 import SideBar from './SideBar';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<Discover />} />
 
+<Route path='/Around' element={<Around/>}/>
 
             </Routes>
           </Grid>

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
+import {Link} from 'react-router-dom'
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
@@ -28,20 +29,23 @@ const SideBar = (props) => {
 
   const drawer = (
     <div>
- 
       <List>
-        {['Discover', 'Around You', 'Top Artists', 'Top Charts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />} 
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
+        {["Discover", "Around You", "Top Artists", "Top Charts"].map(
+          (text, index) => (
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+            <Link to={text}>
+
+                  <ListItemText primary={text} />
+            </Link>
+                </ListItemButton>
+              </ListItem>
+          )
+        )}
       </List>
-   
     </div>
   );
 
